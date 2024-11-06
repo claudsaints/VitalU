@@ -58,7 +58,7 @@ function Graph({ caloriesConsumed, basalRate, goal }: GraphProps) {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" />
-          <YAxis domain={[0, basalRate]} /> {/* Limitando o eixo Y até a Taxa Basal */}
+          <YAxis domain={[0, basalRate]} /> 
           <Tooltip />
 
           
