@@ -66,7 +66,9 @@ class Profile {
     public getGenero = (): string | undefined => this.genero
     public getDataNascimento = (): string => {
         if (this.dataNascimento) {
-  return this.dataNascimento.toISOString().split('T')
+  const dataISO = this.dataNascimento.toISOString().split('T')[0]; // Obtém "YYYY-MM-DD"
+  const [ano, mes, dia] = dataISO.split('-'); // Divide em partes
+  return `${dia}/${mes}/${ano}`; // Formata para "DD/MM/YYYY"
 }
             return ""
     }
