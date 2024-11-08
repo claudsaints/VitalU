@@ -66,7 +66,7 @@ class Profile {
     public getGenero = (): string | undefined => this.genero
     public getDataNascimento = (): string => {
         if (this.dataNascimento) {
-  return this.dataNascimento.toISOString() 
+  return this.dataNascimento.toISOString().split('T')
 }
             return ""
     }
