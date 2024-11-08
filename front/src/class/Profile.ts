@@ -65,7 +65,9 @@ class Profile {
     public getEmail = (): string | undefined => this.email
     public getGenero = (): string | undefined => this.genero
     public getDataNascimento = (): string => {
-        if (this.dataNascimento) return this.dataNascimento.toLocaleDateString()
+        if (this.dataNascimento) {
+  return this.dataNascimento.toISOString() 
+}
             return ""
     }
     public getAlimentosConsumidos = (): AlimentoDoDia[] => this.alimentosConsumidos
