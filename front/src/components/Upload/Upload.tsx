@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../services/storage";
 import css from "../../styles/perfilPage.module.css";
 import { FaCamera } from "react-icons/fa";
+import profile from './profile.png'
 import {FlexDiv, Popup} from '../index'
 interface UploadProps {
   userEmail?: string;
@@ -32,7 +33,7 @@ export default function Upload({ userEmail }: UploadProps) {
         const uniqueUrl = `${url}?t=${new Date().getTime()}`; // Adiciona um timestamp para evitar cache
         
         fetch(uniqueUrl).then((res) => {
-          if(res.status == 400) setProfilePictureUrl("https://cdn.icon-icons.com/icons2/1465/PNG/512/265womanrunning2_100534.png")
+          if(res.status == 400) setProfilePictureUrl(profile)
           else setProfilePictureUrl(uniqueUrl); // Atualiza a URL da imagem de perfil
         })
         .catch((err) => {
