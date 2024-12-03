@@ -36,6 +36,7 @@ export default function Upload({ userEmail }: UploadProps) {
           else setProfilePictureUrl(uniqueUrl); // Atualiza a URL da imagem de perfil
         })
         .catch((err) => {
+          setProfilePictureUrl('./profile.png');
           console.log("error on fetch url",err)
         })
       }
